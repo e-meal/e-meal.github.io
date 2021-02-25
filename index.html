@@ -3,7 +3,7 @@
 
 <head>
     <title>e-Meal: CS353 Term Project</title>
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <meta name="viewport" charset="UTF-8" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
     <link href="css/frame.css" media="screen" rel="stylesheet" type="text/css"/>
     <link href="css/controls.css" media="screen" rel="stylesheet" type="text/css"/>
     <link href="css/custom.css" media="screen" rel="stylesheet" type="text/css"/>
@@ -32,9 +32,8 @@
                 <img src="img/menu.png">
             </a>
             <div class="menu-items flex-row-center flex-item">
-                <a href="index.html" class="menu-index">Proposal</a>
-                <a href="">ER Diagram</a>
-            </div>
+                <a href="index.html" class="menu-index">Home</a>
+                <a href="proposal.html">Project Proposal</a></div>
         </div>
     </div>
 </div>
@@ -43,158 +42,47 @@
         <div class="content-table flex-column">
 
             <!--Start Cover-->
-<!--            <div class="flex-row">
-                <div class="flex-item flex-column">
-                    <img class="image" src="img/dummay-img.png">
-                </div>
+            <div class="flex-row">
                 <div class="flex-item flex-column">
                     <p class="text text-large">
+                        Food Ordering and Delivery System: e-Meal
+                    </p>
+                    <p class="text">
+                        Bilkent University
+                    </p>
+                    <p class="text">
+                        Department of Computer Engineering
+                    </p>
+                    <p class="text">
+                        CS353 - Database Systems
+                    </p>
+                    <p class="text">
+                        Spring 2021
+                    </p>
+                    <p class="text">
+                        Group 18
+                    </p>
+                    <h3>Teaching Assistant:</h3>
+                    <p class="text">
+                        Arif Usta
+                    </p>
+                    <h3>Group Members:</h3>
+                    <p class="text">
+                        Melisa Taşpınar 21803668 Section 2
+                    </p>
+                    <p class="text">
+                        Yiğit Gürses 21702746 Section 1
+                    </p>
+                    <p class="text">
+                        Mustafa Hakan Kara 21703317 Section 1
+                    </p>
+                    <p class="text">
+                        Furkan Demir 21802818 Section 3
+                    </p>
                     </p>
                 </div>
-            </div>-->
+            </div>
             <!--End Cover-->
-
-            <!--Start Introduction-->
-            <div class="flex-row">
-                <div class="flex-item flex-column">
-                    <h2 class="add-top-margin">Introduction</h2>
-                    <hr>
-                    <p class="text">
-                        Online food ordering and delivery platforms are websites and applications that allow their users
-                        to order food from nearby restaurants and have their orders delivered to their location, all
-                        through the Internet. Examples of such platforms include Yemeksepeti [1] and Uber Eats [2].
-                        Platforms like these can have a high number of users, which results in the need to manage a big
-                        amount of possibly valuable data. This data can include important information about the
-                        customers such as name, address, phone, e-mail address; as well as information about each
-                        restaurant such as address, working hours, delivery range and menu. Therefore, such platforms
-                        tend to require a database system to be able to manage such large amounts of data.
-                    </p>
-                    <p class="text">
-                        In this report, we propose a similar web-based application that manages a food ordering and
-                        delivery system. We first give a brief description as to what the project is, and justify our
-                        decision of using a database system by stating why and how we use it. We then specify our
-                        project requirements, which includes functional requirements, non-functional requirements and
-                        constraints. After that, we move onto the limitations section where we specify the limitations
-                        we assert on what each type of user is allowed to do. Thereafter, we provide an Entity
-                        Relationship Diagram corresponding to our database system and describe that diagram. Finally, we
-                        sum up the project in the conclusion section and list our references.
-                    </p>
-                </div>
-            </div>
-            <!--End Introduction-->
-
-            <!--Start Project Description-->
-            <div class="flex-row">
-                <div class="flex-item flex-column">
-                    <h2 class="add-top-margin">Project Description</h2>
-                    <hr>
-                    <p class="text">
-                        E-meal is a web-based application with the purpose of managing a food ordering and delivery
-                        system. In the system, there exist restaurants, their menus, the food and beverages offered in
-                        those menus, and certain actions such as rating and reviewing deliveries. The users of the
-                        system consist of restaurant owners, customers of the restaurants, and delivery guys working for
-                        the restaurants. Customers should be able to make an order from a restaurant of their choice, in
-                        which they are allowed to select any number of items from the restaurant's menu. Here, the
-                        system is supposed to check if the customers have enough credit to make their orders. If so, the
-                        order should be processed and a free driver is assigned for the task of delivery. After the
-                        delivery process is complete, i.e. the customers' orders are delivered to their locations,
-                        customers are expected to rate and review both the restaurant and the driver.
-                        Furthermore, it should be noted that we will be adding additional functionalities to the system,
-                        for the sake of creativity. That is, we will be providing vegetarian-friendly and gluten-free
-                        meal options for customers; as well as an advertisement system for restaurants.
-                    </p>
-                    <h3>Why We Need a Database System</h3>
-                    <p class="text">
-                        A database system can be used to handle data collections that are relatively large, quite
-                        valuable,
-                        and accessed by multiple users, mostly simultaneously [3].
-                    </p>
-                    <p class="text">
-                        A food ordering and delivery system needs to store the information of their users, the orders,
-                        registered restaurants, ratings and reviews. This data can accumulate and reach a quite large
-                        amount
-                        in a short amount of time. In addition, it can contain highly important data, such as the credit
-                        card information of their users. Furthermore, such a system can be accessed by many users at the
-                        same time and, therefore, must support concurrent transactions.
-                    </p>
-                    <p class="text">
-                        Consequently, using a database system instead of an arbitrary file system can be highly
-                        advantageous.
-                    </p>
-                    <h3>How We Use a Database System</h3>
-                    <p class="text">
-                        Our database system will store information about the users such as name, address, phone,
-                        e-mails,
-                        etc. There are three types of users, customers, restaurant owners and delivery guys, the
-                        database
-                        will provide specific functions to the users according to their type. The database will have the
-                        information about restaurants and their menus. In addition, information about the
-                        functionalities
-                        such as giving review and ratings, creating a basket and placing an order will be stored and
-                        displayed by the database.
-                    </p>
-                </div>
-                <!--End Project Description-->
-
-            </div>
-
-            <!--Start Project Description-->
-            <div class="flex-row">
-                <div class="flex-item flex-column">
-                    <h2 class="add-top-margin">Project Description</h2>
-                    <hr>
-                    <h3>A. Functional Requirements</h3>
-                    <p class="text">
-                        <b>Customers</b> should be able to:
-                    </p>
-                    <ul>
-                        <li>See a list of restaurants in delivery range</li>
-                        <li>Filter restaurants by food types</li>
-                        <li>See restaurants' menus</li>
-                        <li>See reviews and ratings of restaurants</li>
-                        <li>Filter menu items based on item categories</li>
-                        <li>Add items with chosen options to the basket</li>
-                        <li>Confirm and pay for current basket to make an order</li>
-                        <li>Add a note to their orders</li>
-                        <li>See their order status (being prepared/on the way/cancelled etc.)</li>
-                        <li>Rate and review their orders</li>
-                        <li>Order the baskets they created in an earlier order.</li>
-                    </ul>
-                    <p class="text">
-                        <b>Restaurant owners</b> should be able to:
-                    </p>
-                    <ul>
-                        <li>See and confirm/cancel orders given to their restaurant</li>
-                        <li>See the items in the restaurant menu</li>
-                        <li>Create new items and add them to restaurant menu</li>
-                        <li>Modify items in the restaurant menu</li>
-                        <li>Modify item discounts in the menu</li>
-                        <li>Respond to the reviews on their restaurant</li>
-                        <li>Set restaurant working hours</li>
-                        <li>See and change restaurant “open” status</li>
-
-                    </ul>
-                </div>
-            </div>
-            <!--End Project Description-->
-
-            <!--Start References-->
-            <div class="flex-row">
-                <div class="flex-item flex-column">
-                    <h2 class="add-top-margin">References</h2>
-                    <p class="text-small-margin">
-                        [1] <i>Yemeksepeti</i>. https://www.yemeksepeti.com/en [Accessed: Feb. 21, 2021]
-                    </p>
-                    <p class="text-small-margin">
-                        [2] <i>Uber Eats</i>. https://www.ubereats.com/ [Accessed: Feb. 21, 2021]
-                    </p>
-                    <p class="text-small-margin">
-                        [3] A. Silberschatz, H. F. Korth, and S. Sudarshan, <i>Database System Concepts</i>, 7th ed. New
-                        York: McGraw-Hill, 2019.
-                    </p>
-                </div>
-            </div>
-            <!--End Project References-->
 
             <!--Start Credits-->
             <div class="flex-row">
